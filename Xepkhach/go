@@ -1,0 +1,11 @@
+#!/bin/bash
+cd test/ip
+tests=($(ls))
+cd ../..
+for test_case in ${tests[@]}; do
+    echo
+    echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++"
+    echo "test/ip/$test_case"
+    ./main < test/ip/$test_case > test/out/"$test_case.o"
+    echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++"
+done
